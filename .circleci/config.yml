@@ -9,11 +9,11 @@ jobs:
       FASTLANE_LANE: test
 #    shell: /bin/bash --login -o pipefail
     steps:
-#      - checkout
-#      - run: bundle install
+      - run: bundle install
+      - checkout
 #Add
       - run: bundler -v
-      - run: gem install fastlane
+#      - run: gem install fastlane
 #Add
       # - run:
       #     name: Fastlane
