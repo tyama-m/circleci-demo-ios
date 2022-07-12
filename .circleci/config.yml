@@ -10,24 +10,14 @@ jobs:
 #    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-
-#Add
-      - run: gem install bundler:2.0.0.pre.3
-      - run: bundle update --bundler
-#Add
-
-      - run: bundle install
-#Add
-#      - run: bundler -v
-#      - run: gem install fastlane
-#Add
-      # - run:
-      #     name: Fastlane
-      #     command: bundle exec fastlane $FASTLANE_LANE
-      # - store_artifacts:
-      #     path: output
-      # - store_test_results:
-      #     path: output/scan
+#      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
 
   adhoc:
     macos:
